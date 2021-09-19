@@ -1,7 +1,7 @@
 import os
 from django.utils.timezone import now
 from django.db import models as m
-from django.contrib.auth.models import User
+from authentication.models import User
 
 class Chat(m.Model):
     name = m.CharField('Название', max_length=50)

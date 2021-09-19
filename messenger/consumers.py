@@ -20,6 +20,7 @@ class MessengerConsumer(WebsocketConsumer):
             if Chat_User.objects.filter(chat=self.room_name, user=self.user).exists() or self.user.is_superuser:
                 self.accept()
 
+
         qs = Message.objects.filter(receiver=self.room_name)
         qs_json = serializers.serialize('json', qs)
         self.send(text_data=qs_json)
